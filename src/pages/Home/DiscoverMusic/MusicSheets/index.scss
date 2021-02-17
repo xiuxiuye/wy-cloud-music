@@ -1,0 +1,188 @@
+@import '../../../../style/var.scss';
+
+.wyy-recommend-discover-music-sheets {
+  .wyy-banner-wrapper {
+    margin-top: $spacing * 8;
+    height: 232px;
+    overflow: hidden;
+    border-radius: $border-radius * 2;
+    position: relative;
+
+    .wyy-filter-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../../../assets/image/banner1.jpg');
+      background-size: 100% 100%;
+      filter: blur(32px);
+    }
+
+    .wyy-banner-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 $spacing * 8;
+
+      img {
+        border-radius: $border-radius;
+      }
+
+      .wyy-banner-text-wrapper {
+        margin-left: $spacing * 8;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div:nth-of-type(1) {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          font-size: $font-size-2;
+          border: 1px solid #E6AA5A;
+          border-radius: 100px;
+          width: 108px;
+          color: #E6AA5A;
+
+          span:first-of-type {
+            font-size: $font-size-4;
+            height: 29px;
+            margin-right: $spacing;
+          }
+        }
+
+        div:nth-of-type(2) {
+          font-size: $font-size-4;
+          margin: $spacing * 8 0;
+          color: $title-dark-color;
+        }
+
+        div:nth-of-type(3) {
+          color: $primary-text-dark-color;
+        }
+      }
+    }
+  }
+
+  .wyy-music-sheet-classify {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: $spacing * 16;
+    margin-bottom: $spacing * 8;
+
+    span {
+      font-size: $font-size-2;
+      padding: $spacing $spacing * 6;
+      border-radius: 100px;
+      margin-left: $spacing * 4;
+      cursor: pointer;
+    }
+
+    .active-classify {
+      background-color: $background-light-color;
+    }
+  }
+
+  .wyy-music-sheet-classify-dark {
+    span {
+      color: $primary-text-dark-color;
+    }
+
+    .active-classify {
+      background-color: $background-dark-color;
+    }
+  }
+
+  .wyy-music-sheets-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .wyy-music-sheet-list-item {
+      flex: 0 0 18%;
+      margin-right: 2%;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      cursor: pointer;
+
+      .cover-wrapper {
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: 6px;
+        }
+
+        .daily-recommend-date {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 64px;
+        }
+
+        .play-icon {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          border-radius: 50%;
+          background-color: white;
+          text-align: center;
+          display: none;
+
+          span {
+            font-size: $font-size-4;
+          }
+        }
+      }
+
+      .cover-wrapper:hover {
+        .play-icon {
+          display: block;
+        }
+      }
+
+      .item-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        font-size: $font-size-3;
+      }
+
+      .item-title-dark {
+        color: $title-dark-color;
+      }
+
+      .play-count {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        font-size: $font-size-3;
+        color: $title-dark-color;
+      }
+
+      @media screen and (min-width: 1900px) {
+
+        .item-title,
+        .play-count {
+          font-size: 18px;
+        }
+
+        .cover-wrapper {
+          .daily-recommend-date {
+            font-size: 96px;
+          }
+        }
+      }
+    }
+  }
+}

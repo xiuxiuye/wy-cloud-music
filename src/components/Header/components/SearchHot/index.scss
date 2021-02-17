@@ -1,0 +1,56 @@
+@import '../../../../style/var.scss';
+
+.wyy-subsearch-hot {
+  color: $primary-text-light-color;
+  &-title {
+    font-size: $font-size-3;
+    margin: $spacing * 8 0;
+  }
+  &-list {
+    &-item {
+      display: flex;
+      align-items: center;
+      &-index {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: $font-size-4;
+        text-align: center;
+      }
+      &-content {
+        margin: $spacing * 4 $spacing * 8;
+        &-title,
+        &-hot,
+        &-type {
+          font-size: $font-size-2;
+        }
+        &-title {
+          font-weight: bold;
+          color: $title-light-color;
+        }
+        &-hot {
+          margin: 0 $spacing * 8;
+        }
+        &-type {
+          font-weight: bold;
+          font-style: italic;
+        }
+        &-hot,
+        &-subtitle {
+          color: $secondary-text-light-color;
+        }
+        &-subtitle {
+          margin-top: $spacing * 2;
+          font-size: $font-size-2;
+        }
+      }
+    }
+    &-item:nth-of-type(1),
+    &-item:nth-of-type(2),
+    &-item:nth-of-type(3) {
+      .wyy-subsearch-hot-list-item-index {
+        color: $red-color;
+      }
+    }
+  }
+}

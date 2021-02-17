@@ -1,0 +1,31 @@
+@import '../../../style/var.scss';
+
+.wyy-recommend-discover-music {
+  width: 100%;
+  padding: 0 $spacing * 32;
+  overflow-y: auto;
+  &-navs {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 48px;
+    border-bottom: 1px solid $border-light-color;
+    span {
+      text-align: center;
+      width: 90px;
+      margin: 0 $spacing * 4;
+      line-height: 48px;
+      cursor: pointer;
+    }
+    span.wyy-recommend-discover-nav-active {
+      border-bottom: 2px solid transparent;
+    }
+  }
+  &-navs-dark {
+    border-bottom-color: $secondary-text-dark-color;
+    span {
+      color: $title-dark-color;
+    }
+  }
+}

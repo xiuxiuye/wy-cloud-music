@@ -1,0 +1,51 @@
+/* 头部、底部播放栏高度 */
+$height: 72px;
+$page-height: calc(100vh - 144px);
+
+/* 字体颜色 */
+/* 浅色背景 */
+$title-light-color: rgba(0, 0, 0, 0.85);
+$primary-text-light-color: rgba(0, 0, 0, 0.65);
+$secondary-text-light-color: rgba(0, 0, 0, 0.45);
+$disabled-light-color: rgba(0, 0, 0, 0.25);
+/* 深色背景 */
+$title-dark-color: rgba(255, 255, 255, 0.85);
+$primary-text-dark-color: rgba(255, 255, 255, 0.65);
+$secondary-text-dark-color: rgba(255, 255, 255, 0.45);
+
+/* 字体大小 */
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 20px;
+$font-size-5: 24px;
+$font-size-6: 28px;
+$font-size-7: 30px;
+$font-size-8: 32px;
+$font-size-9: 34px;
+$font-size-10: 40px;
+
+/* 中心色 */
+/* 浅色背景 */
+$border-light-color: rgba(0, 0, 0, 0.15);
+$background-light-color: rgba(0, 0, 0, 0.04);
+/* 深色背景 */
+$border-dark-color: rgba(255, 255, 255, 0.2);
+$background-dark-color: rgba(255, 255, 255, 0.1);
+
+/* 功能色 */
+$red-color: rgba(255, 58, 58, 1);
+$green-color: rgba(51, 182, 51, 1);
+$blue-color: rgba(0, 160, 231, 1);
+
+
+/* 间距 */
+$spacing: 2px;
+
+/* 左侧栏占据的宽度 */
+$width: 16%;
+$maxWidth: 400px;
+$minWidth: 300px;
+
+/* 圆角 */
+$border-radius: 4px;

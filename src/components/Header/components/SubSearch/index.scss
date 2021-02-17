@@ -1,0 +1,29 @@
+@import '../../../../style/var.scss';
+
+.wyy-subsearch {
+  position: absolute;
+  width: 100%;
+  top: $spacing * 22;
+  left: 0;
+  z-index: 10;
+  &-wrapper {
+    background-color: white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+    padding: $spacing * 8;
+    max-height: 64vh;
+    overflow-y: auto;
+  }
+}
+
+.wyy-subsearch:before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 32px;
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}

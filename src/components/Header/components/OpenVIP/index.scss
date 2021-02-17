@@ -1,0 +1,163 @@
+@import '../../../../style/var.scss';
+
+.wyy-open-vip {
+  width: 800px;
+  height: 648px;
+  background-color: white;
+
+
+  &-header {
+    height: 48px;
+    background-color: $title-light-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $title-dark-color;
+    padding: 0 $spacing * 10;
+    span:last-of-type {
+      font-size: $font-size-5;
+      cursor: pointer;
+    }
+  }
+
+  &-content {
+    height: 600px;
+    overflow-y: auto;
+    &-nav {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid $border-light-color;
+      color: $secondary-text-light-color;
+
+      div {
+        padding: $spacing * 8 0;
+        cursor: pointer;
+        span:last-of-type {
+          margin-left: $spacing * 2;
+          color: $red-color;
+        }
+      }
+      div:first-of-type {
+        span:last-of-type {
+          color: #faad14;
+        }
+      }
+
+      &-active {
+        border-bottom: 3px solid $red-color;
+        color: $title-light-color;
+      }
+    }
+
+    &-list {
+      padding: $spacing * 12 0;
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid $border-light-color;
+      &-item {
+        width: 176px;
+        box-sizing: border-box;
+        border: 1px solid $border-light-color;
+        text-align: center;
+        padding: $spacing * 8;
+        border-radius: $border-radius - 2px;
+        position: relative;
+        margin: $spacing * 6 12px;
+        cursor: pointer;
+
+        div:nth-of-type(1) {
+          span:first-of-type {
+            font-size: $font-size-9;
+            color: black;
+          }
+          span:last-of-type {
+            margin-left: $spacing * 4;
+            color: $secondary-text-light-color;
+            text-decoration: line-through;
+          }
+        }
+        div:nth-of-type(2) {
+          color: $secondary-text-light-color;
+          padding: $spacing * 6 0;
+          border-bottom: 1px dashed $secondary-text-light-color;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis
+        }
+        div:nth-of-type(3) {
+          padding-top: $spacing * 6;
+        }
+
+        &-label {
+          box-sizing: border-box;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: $red-color;
+          font-size: $font-size-2 - 1px;
+          color: white;
+          padding: $spacing $spacing * 4;
+          max-width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis
+        }
+      }
+    }
+
+    &-pay {
+      padding: $spacing * 16;
+      display: flex;
+      &-qrcode {
+        width: 132px;
+        height: 132px;
+        object-fit: cover;
+      }
+      &-type {
+        margin-left: $spacing * 12;
+
+        div:nth-of-type(2) {
+          margin: $spacing * 4 0;
+
+          span {
+            font-size: $font-size-5;
+            margin-right: $spacing * 4;
+          }
+
+          span:first-of-type {
+            color: $green-color;
+          }
+
+          span:last-of-type {
+            color: $blue-color;
+          }
+        }
+
+        div:nth-of-type(3) {
+          span:first-of-type {
+            font-size: $font-size-9 + 12px;
+          }
+          span:last-of-type {
+             font-size: $font-size-2; 
+            span {
+              font-size: $font-size-3 + 1px;
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+
+     &-rule {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $spacing * 16;
+      span {
+        font-size: $font-size-1;
+        color: $blue-color;
+        margin: 0 $spacing * 4;
+      }
+    } 
+  }
+}

@@ -1,0 +1,387 @@
+@import '../../../../style/var.scss';
+
+.wyy-music-details {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all .2s linear;
+  overflow: hidden;
+  &-shrink-btn {
+    position: absolute;
+    right: $spacing * 16;
+    top: $spacing * 16;
+    width: 48px;
+    height: 36px;
+    border-radius: $border-radius;
+    border: 1px solid $border-light-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: $font-size-6;
+      color: $primary-text-light-color;
+    }
+  }
+  &-dark-shrink-btn {
+    border-color: $secondary-text-dark-color;
+    span {
+      color: $primary-text-dark-color;
+    }
+  }
+
+  &-dark-shrink-btn:hover {
+    border-color: $primary-text-dark-color;
+    span {
+      color: $title-dark-color;
+    }
+  }
+
+  &-content-wrapper {
+    height: 100%;
+    box-sizing: border-box;
+    padding: $spacing * 16 $spacing * 44;
+    overflow-y: auto;
+
+    .wyy-music-song-details {
+      display: flex;
+      color: $title-light-color;
+      .wyy-music-song-details-content {
+        flex: 0 0 50%;
+      }
+      .wyy-music-song-details-content:first-of-type {
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .wyy-music-song-cover {
+          width: 60%;
+          padding-bottom: 60%;
+          position: relative;
+          background-image: url('../../../../assets/image/cover_bg.png');
+          background-size: cover;
+          animation-name: infiniteRotation;
+          animation-duration: 10s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          img {
+            width: 72%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: -12%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .wyy-music-song-actions {
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          margin-top: $spacing * 16;
+          .wyy-music-song-action {
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $background-light-color;
+            cursor: pointer;
+            span {
+              font-size: $font-size-6;
+            }
+          }
+          .wyy-music-song-action:hover {
+            background-color: $border-light-color;
+          }
+        }
+      }
+      .wyy-music-song-details-content:last-of-type {
+        flex-grow: 1;
+        .wyy-music-song-title {
+          font-size: $font-size-6;
+          label {
+            font-size: $font-size-2;
+            display: inline-block;
+            border: 1px solid transparent;
+            padding: $spacing - 1 $spacing * 4;
+            border-radius: $border-radius;
+            margin-left: $spacing * 8;
+          }
+        }
+        .wyy-music-song-label {
+          margin: $spacing * 8 0;
+        }
+        .wyy-music-song-subtitle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: $spacing * 32;
+        }
+        .wyy-music-song-lyric {
+          margin-top: $spacing * 8;
+          height: 600px;
+          overflow-y: auto;
+          p:nth-of-type(10) {
+            font-weight: bold;
+            font-size: $font-size-4;
+          }
+        }
+      }
+    }
+
+    .wyy-music-song-extras {
+      display: flex;
+      margin-top: $spacing * 40;
+      &-title {
+        margin-bottom: $spacing * 16;
+        font-weight: bold;
+        font-size: $font-size-4;
+        span:last-of-type {
+          color: $secondary-text-light-color;
+          font-weight: normal;
+          font-size: $font-size-3;
+        }
+      }
+      &-subtitle {
+        margin-bottom: $spacing * 16;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .wyy-music-song-comments {
+        flex-grow: 1;
+        .wyy-music-song-mycomment {
+          height: 120px;
+          border: 1px solid $border-light-color;
+          border-radius: $border-radius * 2;
+          padding: $spacing * 4 $spacing * 8;
+          display: flex;
+          justify-content: space-between;
+          div {
+            align-self: flex-start;
+            display: flex;
+            span {
+              color: $disabled-light-color;
+              font-size: $font-size-4;
+            }
+            span:last-of-type {
+              margin-left: $spacing * 4;
+            }
+          }
+          div:first-of-type {
+            span:last-of-type {
+              font-size: $font-size-3;
+            }
+          }
+        }
+        .wyy-music-song-latest-comments,
+        .wyy-music-song-wonderful-comments {
+          margin-top: $spacing * 20;
+          .wyy-music-song-comments-item {
+            display: flex;
+            padding: $spacing * 12 0;
+            border-bottom: 1px solid $border-light-color;
+            img {
+              width: 56px;
+              height: 56px;
+              border-radius: 50%;
+              margin-right: $spacing * 8;
+            }
+            .wyy-music-song-comment {
+              flex-grow: 1;
+              &-content {
+                line-height: 28px;
+                span:first-of-type {
+                  color: #2d8cf0;
+                }
+              }
+              &-subcontent {
+                color: $secondary-text-light-color;
+                margin-top: $spacing * 8;
+                display: flex;
+                align-items: center;
+                .comment-time {
+                  flex-grow: 1;
+                }
+                .iconfont {
+                  font-size: $font-size-4;
+                  margin-left: $spacing * 8;
+                }
+              }
+              &-reply-content {
+                margin-top: $spacing * 8;
+                background-color: $background-light-color;
+                padding: $spacing * 4 $spacing * 8;
+              }
+            }
+          }
+          &-more {
+            text-align: center;
+            padding: $spacing * 12;
+            span {
+              display: inline-block;
+              border: 1px solid $disabled-light-color;
+              padding: $spacing * 4 $spacing * 12;
+              border-radius: $spacing * 12;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .wyy-music-song-latest-comments {
+        &-page {
+          padding: $spacing * 16 0;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      .wyy-music-song-relations {
+        flex: 0 0 30%;
+        max-width: 600px;
+        margin-left: $spacing * 40;
+        .wyy-music-song-related {
+          span {
+            display: block;
+            margin-bottom: $spacing * 8;
+          }
+          &-item {
+            cursor: pointer;
+            display: flex;
+            padding: $spacing * 4;
+            border-radius: $border-radius;
+            .songCover,
+            img {
+              width: 72px;
+              height: 72px;
+              object-fit: cover;
+              border-radius: $border-radius;
+            }
+            .songCover {
+              background-size: cover;
+              position: relative;
+              .playBtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 32px;
+                height: 32px;
+                background-color: rgba($color: #ffffff, $alpha: 0.85);
+                border-radius: 50%;
+                .iconfont {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  font-size: $font-size-4;
+                }
+              }
+            }
+            &-content {
+              flex-grow: 1;
+              margin-left: $spacing * 8;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              div:first-of-type {
+                margin-bottom: $spacing * 4;
+              }
+              div:last-of-type {
+                color: $secondary-text-light-color;
+              }
+            }
+          }
+          &-item:hover {
+            background-color: $background-light-color;
+          }
+        }
+        .wyy-music-song-related:first-of-type {
+          margin-bottom: $spacing * 24;
+        }
+      }
+    }
+  }
+  &-dark-content-wrapper {
+    .wyy-music-song-details {
+      color: $title-dark-color;
+      .wyy-music-song-details-content:first-of-type {
+        .wyy-music-song-actions {
+          .wyy-music-song-action {
+            background-color: $border-dark-color;
+          }
+          .wyy-music-song-action:hover {
+            background-color: $secondary-text-dark-color;
+          }
+        }
+      }
+    }
+    .wyy-music-song-extras {
+      &-title {
+        color: $title-dark-color;
+        span:last-of-type {
+          color: $secondary-text-dark-color;
+        }
+      }
+      &-subtitle {
+        color: $title-dark-color;
+      }
+      .wyy-music-song-comments {
+        .wyy-music-song-mycomment {
+          background-color: $border-dark-color;
+          div {
+            span {
+              color: $primary-text-dark-color;
+            }
+          }
+        }
+        .wyy-music-song-latest-comments,
+        .wyy-music-song-wonderful-comments {
+          .wyy-music-song-comments-item {
+            border-color: $border-dark-color;
+            .wyy-music-song-comment {
+              &-content {
+                color: $title-dark-color;
+                span:first-of-type {
+                  color: #2d8cf0;
+                }
+              }
+              &-subcontent {
+                color: $secondary-text-dark-color;
+              }
+              &-reply-content {
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+          &-more {
+            span {
+              color: $title-dark-color;
+              border-color: $border-dark-color;
+            }
+          }
+        }
+      }
+      .wyy-music-song-relations {
+        .wyy-music-song-related {
+          &-item {
+            &-content {
+              div:first-of-type {
+                color: $title-dark-color;
+              }
+              div:last-of-type {
+                color: $secondary-text-dark-color;
+              }
+            }
+          }
+          &-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

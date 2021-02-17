@@ -1,0 +1,218 @@
+@import '../../../../style/var.scss';
+
+.wyy-recommend-discover-music-personal {
+  padding: $spacing * 16 0;
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-light-color;
+    height: 48px;
+
+    span:first-of-type {
+      font-size: 22px;
+    }
+
+    span:last-of-type {
+      cursor: pointer;
+    }
+  }
+
+  &-title-dark {
+    border-bottom-color: $secondary-text-dark-color;
+
+    span {
+      color: $title-dark-color;
+    }
+  }
+
+  &-latest-songs {
+    &-content {
+      margin-top: $spacing * 8;
+      display: flex;
+      flex-wrap: wrap;
+
+      .wyy-music-song-related {
+        span {
+          display: block;
+          margin-bottom: $spacing * 8;
+        }
+
+        &-item {
+          flex: 0 0 30%;
+          cursor: pointer;
+          display: flex;
+          padding: $spacing * 4;
+          border-radius: $border-radius;
+
+          .songCover,
+          img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: $border-radius;
+          }
+
+          .songCover {
+            background-size: cover;
+            position: relative;
+
+            .playBtn {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 32px;
+              height: 32px;
+              background-color: rgba($color: #ffffff, $alpha: 0.85);
+              border-radius: 50%;
+
+              .iconfont {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: $font-size-4;
+              }
+            }
+          }
+
+          &-content {
+            flex-grow: 1;
+            margin-left: $spacing * 8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            div:first-of-type {
+              margin-bottom: $spacing * 4;
+            }
+
+            div:last-of-type {
+              color: $secondary-text-light-color;
+              span {
+                font-size: $font-size-1;
+                border: 1px solid transparent;
+                border-radius: $border-radius;
+                padding: 0 $spacing * 2;
+                margin-right: $spacing * 4;
+              }
+            }
+          }
+        }
+
+        &-item:hover {
+          background-color: $background-light-color;
+        }
+
+        &-item-dark {
+          .wyy-music-song-related-item-content {
+            color: $title-dark-color;
+
+            div:last-of-type {
+              color: $secondary-text-dark-color;
+            }
+          }
+        }
+
+        &-item-dark:hover {
+          background-color: $background-dark-color;
+        }
+      }
+    }
+  }
+}
+
+.wyy-music-sheet-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    flex: 0 0 18%;
+    margin-right: 2.5%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    cursor: pointer;
+
+    .cover-wrapper {
+      position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      .daily-recommend-date {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 64px;
+      }
+
+      .play-icon {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 50%;
+        background-color: white;
+        text-align: center;
+        display: none;
+
+        span {
+          font-size: $font-size-4;
+        }
+      }
+    }
+
+    .cover-wrapper:hover {
+      .play-icon {
+        display: block;
+      }
+    }
+
+    .item-title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-size: $font-size-3;
+    }
+
+    .item-title-dark {
+      color: $title-dark-color;
+    }
+
+    .play-count {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      font-size: $font-size-3;
+      color: $title-dark-color;
+    }
+
+    @media screen and (min-width: 1900px) {
+
+      .item-title,
+      .play-count {
+        font-size: 18px;
+      }
+
+      .cover-wrapper {
+        .daily-recommend-date {
+          font-size: 96px;
+        }
+      }
+    }
+  }
+
+  &-item:nth-of-type(5),
+  &-item:nth-of-type(10) {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../../../style/var.scss';
+
+.wyy-subsearch-history {
+  color: $primary-text-light-color;
+  &-title {
+    font-size: $font-size-3;
+    span:first-of-type {
+      margin-right: $spacing * 4;
+    }
+  }
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $spacing * 4;
+  }
+  &-tag {
+    cursor: pointer;
+    font-size: $font-size-1;
+    border: 1px solid $border-light-color;
+    padding: $spacing $spacing * 8;
+    border-radius: 100px;
+    margin: $spacing * 2 $spacing * 4;
+    position: relative;
+    &-closed {
+      position: absolute;
+      top: 50%;
+      right: $spacing * 2;
+      transform: translateY(-50%);
+      font-size: inherit;
+      display: none;
+    }
+  }
+  &-tag:hover {
+    background-color: $background-light-color;
+    .wyy-subsearch-history-tag-closed {
+      display: inline-block;
+    }
+  }
+}

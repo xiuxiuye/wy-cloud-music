@@ -1,0 +1,275 @@
+@import '../../../style/var.scss';
+
+.wyy-music-sheet {
+  padding: $spacing * 20 0;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  &-header {
+    display: flex;
+    padding: 0 $spacing * 20;
+  }
+
+  &-cover {
+    width: 216px;
+    height: 216px;
+    object-fit: cover;
+    border-radius: $border-radius;
+    margin-right: $spacing * 16;
+  }
+
+  &-desc {
+    flex-grow: 1;
+    border-radius: $border-radius;
+
+    div {
+      margin: $spacing * 4 0;
+    }
+    
+    &-1 {
+      display: flex;
+      align-items: center;
+
+      span:nth-of-type(1) {
+        font-size: $font-size-2;
+        border: 1px solid;
+        padding: 0 $spacing * 2;
+        border-radius: $border-radius;
+      }
+
+      span:nth-of-type(2) {
+        font-size: $font-size-5;
+        font-weight: bold;
+        margin: 0 $spacing * 6 $spacing * 1.5;
+        color: $title-light-color;
+      }
+    }
+
+    &-2 {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      span {
+        font-size: $font-size-2;
+        color: $secondary-text-light-color;
+      }
+
+      span:first-of-type {
+        margin: 0 $spacing * 6;
+      }
+    }
+
+    &-3 {
+      display: flex;
+      .wyy-music-sheet-btn {
+        display: block;
+        margin-right: 32px;
+      }
+      .wyy-music-sheet-playall {
+        color: white;
+      }
+    }
+
+    &-4 {
+      font-size: $font-size-2;
+      color: $primary-text-light-color;
+    }
+  }
+
+  &-desc-dark {
+    .wyy-music-sheet-desc-1 {
+      span:nth-of-type(2) {
+        color: $primary-text-dark-color;
+      }
+    }
+    .wyy-music-sheet-desc-2 {
+      span:nth-of-type(2) {
+        color: $secondary-text-dark-color;
+      }
+    }
+    .wyy-music-sheet-desc-3 {
+      .wyy-music-sheet-btn {
+        border: 1px solid $secondary-text-dark-color;
+        color: $primary-text-dark-color;
+      }
+    }
+    .wyy-music-sheet-desc-4 {
+      color: $primary-text-dark-color;
+    }
+  }
+
+  &-btn {
+    padding: $spacing * 2 $spacing * 8;
+    border-radius: 32px;
+    border: 1px solid $border-light-color;
+    margin-right: $spacing * 12;
+    box-sizing: content-box;
+
+    span {
+      font-size: $font-size-2;
+    }
+    span:first-of-type {
+      font-size: 15px;
+      margin-right: $spacing * 2;
+    }
+  }
+
+  &-content {
+    margin-top: $spacing * 16;
+
+    &-nav {
+      margin-bottom: $spacing * 8;
+      padding: 0 $spacing * 20;
+      span {
+        font-size: 15px;
+        margin-right: $spacing * 16;
+        padding-bottom: $spacing * 2;
+        cursor: pointer;
+      }
+
+      &-active {
+        font-weight: bold;
+        border-bottom: 3px solid red;
+      }
+    }
+    &-nav-dark {
+      color: $title-dark-color;
+    }
+  }
+
+  &-content-dark {
+    margin-top: $spacing * 16;
+
+    &-nav {
+      margin-bottom: $spacing * 8;
+      span {
+        font-size: 15px;
+        margin-right: $spacing * 16;
+        padding-bottom: $spacing * 2;
+        cursor: pointer;
+      }
+
+      &-active {
+        font-weight: bold;
+        border-bottom: 3px solid red;
+      }
+    }
+  }
+
+  &-list {
+    &-header,
+    &-body {
+      width: 100%;
+      &-row {
+        padding: 0 $spacing * 20;
+        display: flex;
+        font-size: $font-size-2;
+        div {
+          height: 40px;
+          line-height: 40px;
+          flex-grow: 0;
+          flex-shrink: 0;
+          margin-right: $spacing * 12;
+          color: rgba($primary-text-light-color, 0.55);
+        }
+  
+        div:nth-of-type(1) {
+          width: 88px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          span:nth-of-type(2),
+          span:nth-of-type(3) {
+            font-size: $font-size-3;
+          }
+        }
+        div:nth-of-type(2) {
+          flex-grow: 1;
+          span:first-of-type {
+            color: $title-light-color;
+          }
+          span:nth-of-type(2),
+          span:nth-of-type(3) {
+            font-size: $font-size-1;
+            border: 1px solid;
+            padding: 0 4px;
+            border-radius: 4px;
+            margin-left: 8px;
+          }
+        }
+        div:nth-of-type(3) {
+          width: 248px;
+        }
+        div:nth-of-type(4) {
+          width: 296px;
+        }
+        div:nth-of-type(5) {
+          width: 64px;
+        }
+      }
+    }
+    &-body {
+      &-row:nth-of-type(odd) {
+        background-color: rgba(245, 245, 247, 1);
+      }
+
+      &-row:hover {
+        background-color: $background-light-color;
+      }
+
+      &-row-active {
+        background-color: #e8eaec !important;
+      }
+    }
+  }
+  &-list-dark {
+    .wyy-music-sheet-list-header,
+    .wyy-music-sheet-list-body {
+      &-row {
+        div {
+          color: $primary-text-dark-color;
+        }
+        div:nth-of-type(2) {
+          span:first-of-type {
+            color: $primary-text-dark-color;
+          }
+        }
+      }
+    }
+    .wyy-music-sheet-list-header {
+      &-row {
+        background-color: rgba(48, 50, 54, 0.25);
+      }
+    }
+    .wyy-music-sheet-list-body {
+      &-row:nth-of-type(odd) {
+        background-color: rgba(48, 50, 54, 0.65);
+      }
+      &-row:hover {
+        background-color: rgba(54, 56, 60, 1);
+        div {
+          color: white;
+        }
+        div:nth-of-type(2) {
+          span:first-of-type {
+            color: white;
+          }
+        }
+      }
+      &-row-active {
+        background-color: rgba(66, 68, 72, 1) !important;
+        div {
+          color: white;
+        }
+      }
+    }
+  }
+}

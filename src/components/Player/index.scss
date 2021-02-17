@@ -1,0 +1,321 @@
+@import '../../style/var.scss';
+
+.wyy-player-wrapper {
+  height: 72px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  span {
+    cursor: pointer;
+  }
+
+  .wyy-player-btns {
+    width: $width;
+    max-width: $maxWidth;
+    min-width: $minWidth;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    span {
+      font-size: $font-size-8;
+      margin: 0 $spacing * 8;
+      cursor: pointer;
+    }
+
+    span:nth-of-type(2) {
+      font-size: $font-size-10 + 8px;
+    }
+  }
+
+  .wyy-player-progress {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    &-track {
+      flex-grow: 1;
+      height: 8px;
+      border-radius: 8px;
+      background-color: $border-light-color;
+      position: relative;
+    }
+    
+    &-bar {
+      width: 0%;
+      height: inherit;
+      border-radius: inherit;
+    }
+
+    &-ball {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: white;
+      transform: translate(-7px, -50%);
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
+
+      &-pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+      }
+    }
+
+    &-time {
+      margin: 0 $spacing * 8;
+    }
+
+    span {
+      width: 20px;
+    }
+  }
+
+  .wyy-player-sound {
+    width: 164px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    span {
+      font-size: $font-size-4;
+      margin-right: $spacing * 8;
+    }
+    &-track {
+      flex-grow: 1;
+      display: inline-block;
+      height: 5px;
+      border-radius: 5px;
+      background-color: $border-light-color;
+      position: relative;
+    }
+
+    &-bar {
+      width: 10%;
+      height: inherit;
+      border-radius: inherit;
+    }
+
+    &-ball {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      transform: translate(-7px, -50%);
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
+
+      &-pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .wyy-player-mode-btn {
+    display: inline-block;
+    width: 20px;
+    margin: 0 $spacing * 12;
+  }
+  .wyy-player-playlist-btn {
+    font-size: $font-size-5;
+    cursor: pointer;
+    padding-right: $spacing * 16;
+  }
+
+  .wyy-player-playlist {
+    width: 888px;
+    height: 72vh;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: -72vh;
+    z-index: 10;
+    box-shadow: 0 0 4px 0 $border-light-color;
+    display: flex;
+    flex-direction: column;
+
+    &-header {
+      height: 52px;
+      text-align: center;
+      line-height: 52px;
+      position: relative;
+      flex-shrink: 0;
+      span {
+        padding: 5px 32px;
+        background-color: white;
+        font-size: $font-size-2;
+      }
+      span:first-of-type {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+      span:nth-of-type(2) {
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+      }
+      span.active {
+        background-color: $primary-text-light-color;
+        color: white;
+      }
+
+      span:last-of-type {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+        background-color: transparent; 
+        padding: 0;
+        font-size: $font-size-3;
+      }
+    }
+
+    &-sub-header {
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-2;
+      border-bottom: 1px solid $border-light-color;
+      padding: 0 $spacing * 20;
+      div {
+        display: flex;
+        align-items: center;
+        span:first-of-type {
+          margin-right: $spacing * 4;
+        }
+      }
+      div:first-of-type {
+        flex-grow: 1;
+      }
+      div:nth-of-type(2) {
+        padding-right: $spacing * 8;
+        border-right: 1px solid $border-light-color;
+        span:first-of-type {
+          font-size: $font-size-4;
+        }
+      }
+      div:nth-of-type(3) {
+        padding-left: $spacing * 8;
+      }
+    }
+
+    &-content {
+      color: $primary-text-light-color;
+      flex-grow: 1;
+      font-size: $font-size-2;
+      overflow-y: auto;
+      &-item {
+        padding: 0 $spacing * 20;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        .current-play {
+          position: absolute;
+          top: 50%;
+          left: $spacing * 7;
+          transform: translateY(-50%);
+        }
+        div {
+          flex-grow: 1;
+          span:nth-of-type(2),
+          span:nth-of-type(3) {
+            font-size: $font-size-1;
+            border: 1px solid;
+            padding: 0 4px;
+            border-radius: $border-radius;
+            margin-left: $spacing * 4;
+          }
+        }
+        span.singer {
+          width: 200px;
+        }
+        span.time {
+          width: 56px;
+          text-align: center;
+        }
+      }
+      &-item:nth-of-type(even) {
+        background-color: rgba(245, 245, 247, 1);
+      }
+
+      &-item:hover {
+        background-color: $background-light-color;
+      }
+
+      &-item-active {
+        background-color: #e8eaec !important;
+      }
+    }
+  }
+
+  .wyy-player-playlist-dark {
+    background-color: rgba(22, 24, 28, 1);
+    .wyy-player-playlist-header {
+      span {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      span.active {
+        background-color: rgb(78, 78, 86);
+        color: white;
+      }
+      span.icon-close {
+        background-color: transparent;
+        color: $secondary-text-dark-color;
+      }
+    }
+
+    .wyy-player-playlist-sub-header {
+      color: $secondary-text-dark-color;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      div:nth-of-type(2) {
+        border-right: 1px solid $border-light-color;
+      }
+    }
+
+    .wyy-player-playlist-content {
+      color: $secondary-text-dark-color;
+      div > span.title {
+        color: white;
+      }
+      &-item:nth-of-type(even) {
+        background-color: rgba(48, 50, 54, 1);
+      }
+
+      &-item:hover {
+        background-color: rgba(54, 56, 60, 1);
+        color: white;
+      }
+
+      &-item-active {
+        background-color: rgba(66, 68, 72, 1) !important;
+        color: white;
+      }
+    }
+  }
+}
+
+.wyy-player-wrapper:focus {
+  outline: 0;
+}

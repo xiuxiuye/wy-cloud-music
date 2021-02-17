@@ -1,0 +1,44 @@
+@import '../../../../../style/var.scss';
+
+.wyy-carousel {
+  &-content {
+    position: relative;
+    .wyy-carousel-item {
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      z-index: 0;
+      transition: all .5s ease;
+      img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+    }
+    .wyy-carousel-item-sub:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: inherit;
+      background-color: rgba(0, 0, 0, 0.45);
+      border-radius: 8px;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    .wyy-carousel-pointer {
+      width: 2.5%;
+      height: 3px;
+      background-color: $border-light-color;
+      margin: 0 $spacing * 4;
+    }
+  }
+}

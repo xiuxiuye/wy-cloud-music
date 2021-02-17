@@ -1,0 +1,22 @@
+export default [
+  require('../../../../assets/musicSheets/歌单20/index').default,
+  require('../../../../assets/musicSheets/歌单19/index').default,
+  require('../../../../assets/musicSheets/歌单18/index').default,
+  require('../../../../assets/musicSheets/歌单17/index').default,
+  require('../../../../assets/musicSheets/歌单16/index').default,
+  require('../../../../assets/musicSheets/歌单15/index').default,
+  require('../../../../assets/musicSheets/歌单14/index').default,
+  require('../../../../assets/musicSheets/歌单13/index').default,
+  require('../../../../assets/musicSheets/歌单12/index').default,
+  require('../../../../assets/musicSheets/歌单11/index').default,
+  require('../../../../assets/musicSheets/歌单10/index').default,
+  require('../../../../assets/musicSheets/歌单9/index').default,
+  require('../../../../assets/musicSheets/歌单8/index').default,
+  require('../../../../assets/musicSheets/歌单7/index').default,
+  require('../../../../assets/musicSheets/歌单6/index').default,
+  require('../../../../assets/musicSheets/歌单5/index').default,
+  require('../../../../assets/musicSheets/歌单4/index').default,
+  require('../../../../assets/musicSheets/歌单3/index').default,
+  require('../../../../assets/musicSheets/歌单2/index').default,
+  require('../../../../assets/musicSheets/歌单1/index').default
+]
