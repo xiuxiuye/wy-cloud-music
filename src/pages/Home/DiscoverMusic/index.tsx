@@ -22,7 +22,11 @@ export default function DiscoverMusic (props: DiscoverMusicProps) {
   ]
 
   function toggleNav (path: string) {
-    history.push({ pathname: path })
+    if (path) {
+      history.push({ pathname: path })
+    } else {
+      alert('功能开发中，敬请期待！')
+    }
   }
 
   return (

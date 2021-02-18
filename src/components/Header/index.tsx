@@ -65,10 +65,10 @@ function Header () {
           <span className="iconfont icon-skin header-icon" onClick={() => setIsSkinOpened(pre => !pre)}></span>
           {isSkinOpened && <Skins />}
         </div>
-        <div className="wyy-header-user-mail">
+        <div className="wyy-header-user-mail" onClick={() => alert('功能开发中，敬请期待！')}>
           <span className="iconfont icon-mail header-icon"></span>
         </div>
-        <div className="wyy-header-user-setting">
+        <div className="wyy-header-user-setting" onClick={() => alert('功能开发中，敬请期待！')}>
           <span className="iconfont icon-setting header-icon"></span>
         </div>
       </div>
