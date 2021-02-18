@@ -1,12 +1,12 @@
 export default {
   namespace: 'skin',
   state: {
-    current: 0,
+    current: 1,
     colors: {
-      primaryColor: 'rgba(33, 33, 36, 1)',
-      subColor: 'rgba(33, 33, 36, 1)',
-      contentBGColor: 'rgba(22, 24, 28, 1)',
-      siderBGColor: 'rgba(25, 27, 31, 1)',
+      primaryColor: 'rgba(198, 47, 47, 1)',
+      subColor: 'rgba(232, 60, 60, 1)',
+      contentBGColor: 'rgba(250, 250, 250, 1)',
+      siderBGColor: 'rgba(252, 252, 253, 1)',
       balanceColor: 'rgba(198, 47, 47, 1)'
     }
   },

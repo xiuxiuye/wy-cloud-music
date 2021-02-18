@@ -7,6 +7,20 @@ interface MusicSheetHeaderProps {
 
 export default function MusicSheetHeader ({ musicSheet }: MusicSheetHeaderProps) {
   const store = useContext(StoreContext) as any
+
+
+  // 播放所有歌曲
+  function playAllSongs () {
+    const songs = musicSheet.songs
+    store.dispatch({ type: 'play/setPlayList', value: songs})
+    setCurrentPlayingSong(songs[0])
+  }
+
+  function setCurrentPlayingSong (song: any) {
+    store.dispatch({ type: 'play/setCurrent', value: {...song, progress: 0} })
+    store.dispatch({ type: 'play/setPlaying', value: true })
+  }
+
   return (
     <div className="wyy-music-sheet-header">
       <img className="wyy-music-sheet-cover" src={musicSheet.cover} alt=""/>
@@ -22,7 +36,7 @@ export default function MusicSheetHeader ({ musicSheet }: MusicSheetHeaderProps)
         </div>
         <div className="wyy-music-sheet-desc-3">
           <div className="wyy-music-sheet-btn wyy-music-sheet-playall"
-            style={{ backgroundColor: store.state.skin.colors.balanceColor, borderColor: store.state.skin.colors.balanceColor }}>
+            style={{ backgroundColor: store.state.skin.colors.balanceColor, borderColor: store.state.skin.colors.balanceColor }} onClick={playAllSongs}>
             <span className="iconfont icon-caret-right"></span>
             <span>播放全部</span>
           </div>
