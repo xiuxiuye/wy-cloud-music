@@ -16,7 +16,7 @@ export interface RouteObject {
 const routes: Array<RouteObject> = [
   {
     path: '/',
-    redirect: '/recommend/discover/latest',
+    redirect: '/recommend/discover/personal',
     exact: true
   },
   {
