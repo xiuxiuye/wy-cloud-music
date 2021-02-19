@@ -13,7 +13,7 @@ function SubSearch ({ styles, setIsInSubSearch }: SubSearchProps) {
   const store = useContext(StoreContext) as any
 
   return (
-    <div className="wyy-subsearch" style={styles} onMouseEnter={() => setIsInSubSearch(true)} onMouseLeave={() => setIsInSubSearch(false)}>
+    <div className={`wyy-subsearch ${store.state.skin.current ? '' : 'wyy-subsearch-dark'}`} style={styles} onMouseEnter={() => setIsInSubSearch(true)} onMouseLeave={() => setIsInSubSearch(false)}>
       <div className={`wyy-subsearch-wrapper ${store.state.skin.current ? 'scrollbar' : 'dark-scrollbar'}`}>
         <SearchHistory />
         <SearchHot />

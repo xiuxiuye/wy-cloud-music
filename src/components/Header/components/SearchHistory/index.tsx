@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { HeaderContext } from '../../index'
+import { StoreContext } from '../../../../store/provider'
 import './index.scss'
 
 interface HistoryListEl {
@@ -10,6 +11,7 @@ interface HistoryListEl {
 function SearchHistory () {
   const [historyList, setHistoryList] = useState(new Array(0))
   const getDataSucess = useContext(HeaderContext)
+  const store = useContext(StoreContext) as any
   
   useEffect(() => {
     // 模拟异步请求数据
@@ -27,7 +29,7 @@ function SearchHistory () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <div className="wyy-subsearch-history">
+    <div className={`wyy-subsearch-history ${store.state.skin.current ? '' : 'wyy-subsearch-history-dark'}`}>
       <div className="wyy-subsearch-history-title">
         <span>搜索历史</span>
         <span className="icon iconfont icon-template_delete"></span>

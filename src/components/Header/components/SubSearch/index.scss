@@ -27,3 +27,22 @@
   border-style: solid;
   border-color: transparent transparent white transparent;
 }
+
+.wyy-subsearch-dark {
+  .wyy-subsearch-wrapper {
+    background-color: rgba(25, 27, 31, 1);
+  }
+}
+
+.wyy-subsearch-dark:before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 32px;
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(25, 27, 31, 1) transparent;
+}

@@ -37,3 +37,17 @@
     }
   }
 }
+
+.wyy-subsearch-history-dark {
+  color: $title-dark-color;
+  .wyy-subsearch-history-title {
+    color: $title-dark-color;
+  }
+  .wyy-subsearch-history-tag {
+    cursor: pointer;
+    border-color: $border-dark-color;
+  }
+  .wyy-subsearch-history-tag:hover {
+    background-color: $background-dark-color;
+  }
+}

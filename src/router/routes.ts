@@ -13,12 +13,22 @@ export interface RouteObject {
   exact?: boolean;
 }
 
-const routes: Array<RouteObject> = [
+// 路由重定向配置
+const redirectRoutes = [
   {
     path: '/',
     redirect: '/recommend/discover/personal',
     exact: true
   },
+  {
+    path: '/recommend/discover',
+    redirect: '/recommend/discover/personal',
+    exact: true
+  }
+]
+
+const routes: Array<RouteObject> = [
+  ...redirectRoutes,
   {
     path: '/',
     component: Home,
