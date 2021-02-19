@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext }  from 'react'
+import { StoreContext } from '../../../../store/provider'
 
 interface SubContentProps {
   avator: any;
 }
 
 export default function SubContent({ avator }: SubContentProps) {
+  const store = useContext(StoreContext) as any
+
   return (
-    <div className="wyy-header-user-account-subContent">
+    <div className={`wyy-header-user-account-subContent ${store.state.skin.current ? '' : 'wyy-header-user-account-subContent-dark'}`}>
       <div className="wyy-header-user-account-subContent-content1">
         <img src={avator} alt="" />
         <span>吉尔伽美什</span>

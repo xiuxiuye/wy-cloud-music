@@ -90,13 +90,13 @@
 
     /** content3 */
     &-content3 {
-      padding: $spacing * 2 $spacing * 12;
+      padding: $spacing * 8 0;
       border-bottom: 1px solid $border-light-color;
 
       &-item {
         display: flex;
         align-items: center;
-        margin: $spacing * 10 0;
+        padding: $spacing * 4 $spacing * 12;
         span {
           font-size: $font-size-2;
           color: $primary-text-light-color;
@@ -134,17 +134,21 @@
           font-size: $font-size-3;
         }
       }
+
+      &-item:hover {
+        background-color: $background-light-color;
+      }
     }
 
     /** content4 */
     &-content4 {
-      padding: $spacing * 2 $spacing * 12;
+      padding: $spacing * 4 0;
       border-bottom: 1px solid $border-light-color;
 
       &-item {
         display: flex;
         align-items: center;
-        margin: $spacing * 10 0;
+        padding: $spacing * 4 $spacing * 12;
         span {
           font-size: $font-size-2;
           color: $primary-text-light-color;
@@ -170,16 +174,18 @@
           color: $disabled-light-color;
         }
       }
+
+      &-item:hover {
+        background-color: $background-light-color;
+      }
     }
 
     /** content5 */
     &-content5 {
-      padding: $spacing * 2 $spacing * 12 0;
-
       &-item {
         display: flex;
         align-items: center;
-        margin: $spacing * 10 0 0;
+        padding: $spacing * 2 $spacing * 12 0;
         span {
           font-size: $font-size-2;
           color: $primary-text-light-color;
@@ -188,6 +194,10 @@
           font-size: $font-size-5;
           margin-right: $spacing * 6;
         }
+      }
+
+      &-item:hover {
+        background-color: $background-light-color;
       }
     }
   }
@@ -204,6 +214,104 @@
     border-width: 8px;
     border-style: solid;
     border-color: transparent transparent white transparent;
+  }
+
+  &-subContent-dark {
+    background-color: rgba(25, 27, 31, 1);
+
+    /** content1 */
+    .wyy-header-user-account-subContent-content1 {
+      color: $title-dark-color;
+
+      .wyy-header-user-account-sign-in {
+        border-color: $border-dark-color;
+      }
+    }
+
+    /** content2 */
+    .wyy-header-user-account-subContent-content2 {
+      border-color: $border-dark-color;
+      color: $primary-text-dark-color;
+      &-item:nth-of-type(2) {
+        div {
+          border-left-color: $border-dark-color;
+          border-right-color: $border-dark-color;
+        }
+      }
+      &-item:hover {
+        color: $title-dark-color;
+      }
+    }
+
+    /** content3 */
+    .wyy-header-user-account-subContent-content3 {
+      &-item {
+        span {
+          color: $primary-text-dark-color;
+        }
+        span:last-of-type {
+          color: $secondary-text-dark-color;
+        }
+      }
+      &-item:hover {
+        background-color: rgba(56, 56, 58, 1);
+        span {
+          color: $title-dark-color;
+        }
+      }
+    }
+
+    /** content4 */
+    .wyy-header-user-account-subContent-content4 {
+      
+      &-item {
+        span {
+          color: $primary-text-dark-color;
+        }
+      }
+
+      &-item:last-of-type {
+        span:nth-of-type(3),
+        span:nth-of-type(4) {
+          color: $secondary-text-dark-color;
+        }
+      }
+      &-item:hover {
+        background-color: rgba(56, 56, 58, 1);
+        span {
+          color: $title-dark-color;
+        }
+      }
+    }
+
+    /** content5 */
+    .wyy-header-user-account-subContent-content5 {
+      &-item {
+        span {
+          color: $primary-text-dark-color;
+        }
+      }
+      &-item:hover {
+        background-color: rgba(56, 56, 58, 1);
+        span {
+          color: $title-dark-color;
+        }
+      }
+    }
+  }
+
+  &-subContent-dark:before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(25, 27, 31, 1) transparent;
   }
 
   &-sign-in {

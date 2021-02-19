@@ -22,7 +22,7 @@
     }
     &-current {
       border-bottom: 2px solid $title-light-color;
-      color:  $title-light-color;
+      color:  $title-light-color !important;
     }
   }
 
@@ -94,3 +94,44 @@
   border-style: solid;
   border-color: transparent transparent white transparent;
 }
+
+.wyy-skins-dark {
+  background-color: rgba(56, 56, 58, 1);
+
+  .wyy-skins-tabs {
+    color: $title-dark-color;
+    border-bottom-color: $border-dark-color;
+    span {
+      color: $primary-text-dark-color;
+    }
+    &-current {
+      border-bottom-color: rgba(198, 47, 47, 1);
+      color:  white !important;
+    }
+  }
+
+  .wyy-skins-themes-options {
+    .wyy-skins-themes-option {
+      &-selected {
+        span {
+          background-color: rgba(56, 56, 58, 1);
+          color: rgba(198, 47, 47, 1) !important;
+        }
+      }
+    }
+  }
+}
+
+.wyy-skins-dark:before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  right: 142px;
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(56, 56, 58, 1) transparent;
+}
+
