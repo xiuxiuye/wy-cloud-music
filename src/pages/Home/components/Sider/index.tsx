@@ -11,7 +11,7 @@ const blocks = [
       {
         title: '发现音乐',
         icon: 'icon-yinle',
-        path: '/recommend/discover/personal'
+        path: '/recommend/discover'
       }
     ]
   },

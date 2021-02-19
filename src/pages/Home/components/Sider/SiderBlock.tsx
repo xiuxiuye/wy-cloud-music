@@ -54,7 +54,7 @@ export default function SiderBlock ({ title, data, block }: SiderBlockProps) {
         {isExpand && data.map(el => <div
           className={`wyy-sider-menu-block-list-item ${(block.path === location.pathname && el.id === (location as any).state.id) || (el.path === location.pathname) ? 'wyy-sider-menu-block-list-item-active' : ''}`}
           key={el.title}
-          style={{borderLeftColor: (block.path === location.pathname && el.id === (location as any).state.id) || (el.path === location.pathname) ? store.state.skin.colors.balanceColor : ''}}
+          style={{borderLeftColor: (block.path === location.pathname && el.id === (location as any).state.id) || (el.path && location.pathname.includes(el.path)) ? store.state.skin.colors.balanceColor : ''}}
           onClick={() => handleClick(el)}>
             <span className={`iconfont ${el.icon}`}></span>
             <span>{el.title}</span>
