@@ -61,7 +61,7 @@ export default function Carousel ({ images }: CarouselProps) {
           className={`wyy-carousel-item ${index === current ? 'wyy-carousel-item-current' : [pre, next].includes(index) ? 'wyy-carousel-item-sub' : ''}`}
           key={`carousel${index}`}
           style={{
-            transform: `scaleY(${index === current ? 1 : 0.8})`,
+            transform: `scaleY(${index === current ? 1 : 0.85})`,
             left: `${index === pre ? 0 : index === next ? horizontalOffset : horizontalOffset / 2}px`,
             opacity: [current, pre, next].includes(index) ? 1 : 0,
             zIndex: index === current ? 3 : index === pre ? 2 : index === next ? 1 : 0
