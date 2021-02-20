@@ -59,8 +59,8 @@ export default function MusicSheets () {
           <img src={require('../../../../assets/image/banner.jpg')} alt=""/>
           <div className="wyy-banner-text-wrapper">
             <div>
-              <span className="iconfont icon-crown"></span>
-              <span>精品歌单</span>
+              <span className="iconfont icon-clock"></span>
+              <span>新歌速递</span>
             </div>
             <div>你的青春里有没有属于你的一首歌</div>
             <div>青春里的那首歌</div>
@@ -99,7 +99,7 @@ export default function MusicSheets () {
               <span style={{ borderColor: store.state.skin.colors.balanceColor, color: store.state.skin.colors.balanceColor }}>MV</span>
             </div>
             <div>{el.singer}</div>
-            <div>{el.title}</div>
+            <div>《{el.title}》</div>
             <div>{util.changeTimeFormat(el.duration)}</div>
           </div>
         </div>)}
