@@ -26,6 +26,9 @@ export default function Carousel ({ images }: CarouselProps) {
     const currentItemDOM = document.querySelector('.wyy-carousel-item-current > img') as HTMLImageElement
     const wrapperDOM = document.querySelector('.wyy-carousel-content') as HTMLImageElement
     setHorizontalOffset(wrapperDOM.clientWidth - currentItemDOM.clientWidth)
+    const height = currentItemDOM.clientHeight
+    // 解决图片强缓存导致的onload事件不触发问题
+    height && setContentHeight(height)
     currentItemDOM.onload = () => {
       const height = currentItemDOM.clientHeight
       setContentHeight(height)
